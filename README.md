@@ -23,6 +23,8 @@
 
 ## 安装
 
+### 1. 安装本 Skill
+
 将仓库克隆到 Codex 的 Skills 目录，并使用 Skill 名称作为文件夹名：
 
 ```powershell
@@ -36,6 +38,18 @@ family-handdrawn-story-video
 ```
 
 再放入 Codex 的 Skills 目录。安装或更新后，建议新开一个 Codex 任务，让 Skill 重新加载。
+
+只安装本仓库，已经可以整理真实故事、生成画面脚本并完成逐幕修改。
+
+### 2. 安装正式视频制作依赖
+
+如果还需要生成插画、制作动效并导出 MP4，需要另外安装 HyperFrames 完整套件：
+
+```powershell
+npx skills add heygen-com/hyperframes --all
+```
+
+这是一条一次性安装命令，不需要分别寻找并下载 `hyperframes`、`general-video` 和 `media-use`。
 
 ## 使用方式
 
@@ -89,16 +103,24 @@ family-handdrawn-story-video
 - `production-contract.md`：成片规格、动态要求与验收方法。
 - `example-story.md`：七幕故事结构示例，不作为可直接复制的文案。
 
-## 相关能力
+## 正式制作的前置依赖
 
-正式制作阶段会使用以下 Codex Skills：
+`family-handdrawn-story-video` 是故事编排与制作流程 Skill，不包含完整的视频渲染工具。
 
-- `hyperframes`
-- `general-video`
-- `media-use`
-- `imagegen`
+- **只需要画面脚本**：安装本仓库即可，不需要额外安装其他 Skills。
+- **需要像示例一样生成完整视频**：还需要安装 HyperFrames 完整套件。
+- `hyperframes`：正式视频制作入口，需要额外安装。
+- `general-video`：由 HyperFrames 在正式制作时自动安装或更新，不需要单独下载。
+- `media-use`：属于 HyperFrames 核心组件，会随完整套件安装，不需要单独下载。
+- `imagegen`：当前 Codex 通常内置，一般不需要额外下载；如果使用的 Codex 环境没有提供图片生成能力，插画生成步骤将无法执行。
 
-这些能力只会在完整画面脚本获得确认后进入制作流程。
+推荐直接运行：
+
+```powershell
+npx skills add heygen-com/hyperframes --all
+```
+
+安装完成后，用户不需要手动逐个管理上述视频 Skills。它们只会在完整画面脚本获得确认后进入正式制作流程。
 
 ## 素材说明
 
