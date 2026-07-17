@@ -1,0 +1,4 @@
+interface:
+  display_name: "家庭手绘故事视频"
+  short_description: "把真实家庭故事制作成无旁白也能看懂的固定角色手绘视频"
+  default_prompt: "使用 family-handdrawn-story-video 把我的家庭故事先整理成无旁白也能看懂的完整画面脚本，等我确认后再制作视频。"
